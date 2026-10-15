@@ -16,17 +16,18 @@
 
 ## Products
 
-| Column         | Data Type | Description               | Business Rule                 |
-| -------------- | --------- | ------------------------- | ----------------------------- |
-| product_id     | STRING    | Unique product identifier | Should be unique and non-null |
-| product_name   | STRING    | Product name              | Should not be empty           |
-| category       | STRING    | Product category          | Should be valid               |
-| department     | STRING    | Product department        | Should be valid               |
-| brand          | STRING    | Product brand             | Should not be empty           |
-| unit_price     | DOUBLE    | Selling price per unit    | Should be >= 0                |
-| cost_price     | DOUBLE    | Product cost              | Should be >= 0                |
-| stock_quantity | INT       | Available inventory       | Should be >= 0                |
-| product_status | STRING    | Product availability      | Valid status required         |
+| Column       | Data Type | Description               | Business Rule                 |
+| ------------ | --------- | ------------------------- | ----------------------------- |
+| product_id   | STRING    | Unique product identifier | Should be unique and non-null |
+| product_name | STRING    | Product name              | Should not be empty           |
+| category     | STRING    | Product category          | Should be valid               |
+| brand        | STRING    | Product brand             | Should not be empty           |
+| unit_price   | DOUBLE    | Selling price per unit    | Should be >= 0                |
+| cost_price   | DOUBLE    | Product cost              | Should be >= 0                |
+| subcategory  | STRING    | Sub Product Category      | Should not be empty           |
+| brand        | STRING    | Brand Name                | Should not be empty           |
+| created_date | DATE      | Creation Date             | Should not be empty           |
+| is_active    | STRING    | Active Status             | Should not be empty           |
 
 ## Orders
 
@@ -39,8 +40,6 @@
 | shipping_country | STRING    | Shipping country        | Should be valid               |
 | shipping_city    | STRING    | Shipping city           | Should not be empty           |
 | payment_method   | STRING    | Payment method          | Valid method required         |
-| sales_channel    | STRING    | Sales channel           | Valid channel required        |
-| coupon_code      | STRING    | Applied coupon          | Can be null                   |
 | order_total      | DOUBLE    | Total order value       | Should be >= 0                |
 
 ## Transactions
@@ -49,7 +48,6 @@
 | ------------------ | --------- | ----------------------------- | ----------------------------- |
 | transaction_id     | STRING    | Unique transaction identifier | Should be unique and non-null |
 | order_id           | STRING    | Related order                 | Should reference order        |
-| customer_id        | STRING    | Related customer              | Should reference customer     |
 | product_id         | STRING    | Purchased product             | Should reference product      |
 | transaction_date   | DATE      | Financial transaction date    | Should be valid               |
 | quantity           | INT       | Units purchased               | Should be > 0                 |
@@ -57,5 +55,4 @@
 | discount_amount    | DOUBLE    | Discount applied              | Should be >= 0                |
 | tax_amount         | DOUBLE    | Tax applied                   | Should be >= 0                |
 | transaction_amount | DOUBLE    | Final transaction amount      | Should be >= 0                |
-| transaction_status | STRING    | Financial transaction status  | Valid status required         |
-| payment_method     | STRING    | Transaction payment method    | Valid method required         |
+| payment_status     | STRING    | Payment transaction status    | Valid status required         |
