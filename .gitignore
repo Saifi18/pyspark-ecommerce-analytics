@@ -30,3 +30,6 @@ data/output/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Local BI source data
+analytics/bi/source_data/
